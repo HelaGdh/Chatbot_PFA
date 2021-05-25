@@ -1,0 +1,184 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: thankyou
+  examples: |
+    - okay great thanks
+    - thank you
+    - sure thanks
+    - thank bye
+    - thanks
+
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - fine
+    - great
+    - good
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: tell_exercise
+  examples: |
+    - what's good amount of exercise for someone in their thirties?
+    - How much exercise should I be getting?
+    - How much ecercise is recommended?
+    - Is walking once a day enough exercise?
+    - How much exercise should I do every day?
+    - How many times per week should I go to the gym?
+
+- intent: my_exercise
+  examples: |
+    -  I went for a [run]{"entity":"exercise","value":"run"}
+    -  I went for a [run and a swim]{"entity":"exercise","value":"run and a swim"}
+    - uh huh an hour of [yoga]{"entity":"exercise","value":"yoga"}
+    -  I went for a [hike]{"entity":"exercise","value":"hike"}
+    -  I took the dog for a [walk]{"entity":"exercise","value":"walk"}
+    -  I played [tennis]{"entity":"exercise","value":"tennis"}
+    - I went [swimming]{"entity":"exercise","value":"swimming"}
+    - Took a [spin class]{"entity":"exercise","value":"spin class"}
+    - Did some [boxing]{"entity":"exercise","value":"boxing"}
+    - [rock climbing]{"entity":"exercise","value":"rock climbing"}
+    - played some [basketball]{"entity":"exercise","value":"basketball"}
+    - played [football]{"entity":"exercise","value":"football"}
+    - I did a [workout]{"entity":"exercise","value":"workout"} video
+- intent: stress_feel
+  examples: |
+    - [low]{"entity":"stress","value":"low"}
+    - [medium]{"entity":"stress","value":"medium"}
+    - [high]{"entity":"stress","value":"high"}
+- intent: sleep_hours
+  examples: |
+   - a full [8 hours]{"entity":"sleep","value":"8 hours"}
+   - only [four hours]{"entity":"sleep","value":"four hours"}
+   - about [6 hours]{"entity":"sleep","value":"6 hours"}
+
+#- intent: ask_eat_healthy
+  #examples: |
+   # - what's considered a healthy diet?
+    #- What's considered a good diet ?
+    #- How do I follow a healthy diet?
+    #- What's an example of a healthy diet?
+    #- How do I eat healthly?
+    #- what is a healthy diet?
+
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - What is 2 + 2?
+    - Who's the US President?
+    - I want to order pizza
+    - That's not what I want to do
+    - Wait stop
+    - you are no help
+    - this is no help at all
+    - how old are you?
+    - tell me the weather
+    - this isn't working
+    - I already told you that
+    - don't like that
+    - I don't want to tell you that
+    - none of youe business
+    - that's not right
+    - stop asking
+    - nevermind
+    - I changed my mind
+    - I want to do something else
+
+- intent: my_weight
+  examples: |
+    - my weight is [55]  kilos{"entity":"weight","value":"55"}
+    - my weight is [62] kilos {"entity":"weight","value":"62"}
+    - my weight is [72]kilograms {"entity":"weight","value":"72"}
+    - my weight is [50] kg {"entity":"weight","value":"50"}
+    - I am [110] kg {"entity":"weight","value":"110"}
+    - I weight [84] kilos  {"entity":"weight","value":"84"}
+    - [75] kg  {"entity":"weight","value":"75"}
+
+- intent: my_height
+  examples: |
+    - my height [1.75] m {"entity":"height","value":"1.75"}
+    - my height [1.50] meters {"entity":"height","value":"1.50"}
+    - I am [1.49] m tall{"entity":"height","value":"1.49"}
+    - my height [1.68] meters{"entity":"height","value":"1.68"}
+    - [1.95] meters {"entity":"height","value":"1.95"}
+    - [1.80] m {"entity":"height","value":"1.80"}
+    - [1.55]{"entity":"height","value":"1.55"}

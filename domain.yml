@@ -1,0 +1,142 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - thankyou
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - out_of_scope
+  - my_exercise:
+      use_entities:
+        - exercise
+  - stress_feel:
+      use_entities:
+        - stress
+  - sleep_hours:
+      use_entities:
+        - sleep
+  - my_height:
+      use_entities:
+        - height
+  - my_weight:
+      use_entities:
+        - weight
+
+entities:
+  - exercise
+  - stress
+  - sleep
+  - height
+  - weight
+
+slots:
+  confirm_exercise:
+    type: bool
+  exercise:
+    type: text
+  stress:
+    type: text
+  sleep:
+    type: text
+  height:
+    type: float
+  weight:
+    type: float
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you feeling today?"
+
+  utter_cheer_up:
+  - text: "It's okay, I am sure tomorrow will be better"
+
+  utter_happy:
+  - text: "Great, I'm happy for you"
+
+  utter_wellness_check:
+  - text: "It's time for your daily wellness check. Tracking healthy habits is a great way to measure your progress over time. I will be asking you a few questions about your health"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am just a bot, powered by Rasa."
+
+  #utter_exercise:
+  #- text: "Most healthy adults should aim to get about 150 min of moderate exercise per week. This includes activities like brisk walk or yard work."
+
+  utter_confirm_exercise:
+  - text:  "Did you exercise yesterday?"
+
+  utter_ask_exercise:
+    - text:  "What exercises did you do exactly?"
+
+  utter_ask_stress:
+  - text: "Is your stress level low, medium or high?"
+
+  utter_ask_sleep :
+  - text : "How much sleep did you get last night?"
+
+  utter_slots_values:
+    - text:
+        "Here's your daily wellness info:
+         - Exercised?: {confirm_exercise}
+         - Type of exercise: {exercise}
+         - Sleep: {sleep}
+         - Stress level: {stress}"
+
+  utter_ask_height:
+    - text: "Can you please enter your height in meters (m)"
+
+  utter_ask_weight:
+    - text: "Can you please enter your weight in kilograms (kg)"
+
+  utter_details:
+    - text: "Thanks for providing the given details \nHeight: {height}m ,\nWeight: {weight}."
+
+  utter_out_of_scope:
+    - text: "Sorry, I didn't get what you said. Please rephrase"
+
+  utter_no_worries:
+    - text: "No problem"
+
+  utter_BMI:
+    - text: "Do you want to calculate your Body Mass Index (BMI) today?"
+
+actions:
+  - action_submit
+  - validate_health_form
+  - action_IMC
+  - user_imc_form
+
+forms:
+  user_details_form:
+    confirm_exercise:
+      - type: from_intent
+        intent: my_exercise
+        value: true
+    exercise:
+      - type: from_entity
+        entity: exercise
+    stress:
+      - type: from_entity
+        entity: stress
+    sleep:
+      - type: from_entity
+        entity: sleep
+
+  user_imc_form:
+    height:
+      - type: from_entity
+        entity: height
+    weight:
+      - type: from_entity
+        entity: weight
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

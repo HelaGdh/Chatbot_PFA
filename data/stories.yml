@@ -1,0 +1,36 @@
+version: "2.0"
+
+stories:
+
+
+  - story: survey happy path affirm BMI
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+      - action: utter_wellness_check
+      - action: utter_confirm_exercise
+      - action: user_details_form
+      - action: action_submit
+      - action: utter_BMI
+      - intent: affirm
+      - action: utter_ask_height
+      - action: user_imc_form
+      - action: action_IMC
+
+
+  - story: survey sad path affirm BMI
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_wellness_check
+      - action: user_details_form
+      - action: action_submit
+      - action: utter_BMI
+      - intent: affirm
+      - action: user_imc_form
+      - action: action_IMC
+
